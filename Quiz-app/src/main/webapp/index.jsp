@@ -1,5 +1,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
+    <head>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
 <body>
 <div class="container">
     <div class="screen active" id="start-screen">
