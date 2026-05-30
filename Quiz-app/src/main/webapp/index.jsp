@@ -1,11 +1,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
     <head>
-        <link rel="stylesheet" href="style.css"/>
+        <link type="text/css" rel="stylesheet" href="style.css"/>
     </head>
 <body>
 <div class="container">
-    <div class="screen active" id="start-screen">
+    <div class="screen" id="start-screen">
         <h1>Quiz time!</h1>
         <p>Kiểm tra hiểu biết của bạn qua các câu hỏi thú vị về DHV nhé!</p>
         <button id="start-btn">
@@ -33,8 +33,8 @@
 
         </div>
     </div>
-    <div id="result-screen" class="screen">
-        <h1>Kết quả trắc nghiệm</h1>
+    <div id="result-screen" class="screen active">
+        <h1 >Kết quả trắc nghiệm</h1>
         <div class="result-info">
             <p>Điểm số của bạn <span id="final-score">0</span> trong tổng số <span id="max-score">5</span></p>
             <div id="result-message">Hoàn thành!!!</div>
