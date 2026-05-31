@@ -42,5 +42,6 @@
         <button id="restart-btn">Khởi động lại!</button>
     </div>
 </div>
+<script src="script.js"></script>
 </body>
 </html>

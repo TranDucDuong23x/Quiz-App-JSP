@@ -113,3 +113,27 @@ button:hover{
         font-size:1rem;
     }
 }
+.answer-btn{
+    background-color:#f8f0e5;
+    color:#333;
+    border:2px solid #eadbc8;
+    border-radius:10px;
+    padding: 1rem;
+    cursor:pointer;
+    text-align:left;
+    transition:all 0.3s ease;
+}
+.answer-btn:hover{
+    background-color:#eadbc8;
+    border-color:#dac0ac;
+}
+.answer-btn.correct{
+    background-color: #e6fff0;
+    border-color: #a4f0c4;
+    color:#28a745;
+}
+.answer-btn.incorrect{
+    background-color:#fff0f0;
+    border-color:#ffbdbd;
+    color:#dc3545;
+}

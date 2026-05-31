@@ -1,0 +1,7 @@
+0:0:0:0:0:0:0:1 - - [31/May/2026:01:56:06 +0000] "GET /?id=6b8bd796-39b6-45a9-8e61-d7b793eac9b9&vscodeBrowserReqId=1780192565313 HTTP/1.1" 200 1479 http-bio-8080-exec-1 66
+0:0:0:0:0:0:0:1 - - [31/May/2026:01:56:06 +0000] "GET /?id=6b8bd796-39b6-45a9-8e61-d7b793eac9b9&vscodeBrowserReqId=1780192565937 HTTP/1.1" 200 1479 http-bio-8080-exec-2 64
+0:0:0:0:0:0:0:1 - - [31/May/2026:01:56:07 +0000] "GET /style.css HTTP/1.1" 200 2030 http-bio-8080-exec-5 5
+0:0:0:0:0:0:0:1 - - [31/May/2026:04:39:51 +0000] "GET /?id=7361e8ce-2ded-4e66-821a-a3c46d6c4dfe&vscodeBrowserReqId=1780202391126 HTTP/1.1" 200 1513 http-bio-8080-exec-1 757
+0:0:0:0:0:0:0:1 - - [31/May/2026:04:39:51 +0000] "GET /?id=7361e8ce-2ded-4e66-821a-a3c46d6c4dfe&vscodeBrowserReqId=1780202392699 HTTP/1.1" 200 1513 http-bio-8080-exec-3 3
+0:0:0:0:0:0:0:1 - - [31/May/2026:04:39:51 +0000] "GET /style.css HTTP/1.1" 304 - http-bio-8080-exec-4 11
+0:0:0:0:0:0:0:1 - - [31/May/2026:04:39:52 +0000] "GET /script.js HTTP/1.1" 200 2270 http-bio-8080-exec-7 3
