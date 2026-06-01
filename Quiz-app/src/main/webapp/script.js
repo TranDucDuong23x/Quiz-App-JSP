@@ -59,22 +59,26 @@ const quizQuestion = [
         ]
     }
 ]
-let currentQuestionIndex = 0;
-let score = 0;
-let answerDisable=false;
+function startQuiz(){
 
-totalQuestionSpan.textContent = quizQuestion.length
-maxScoreSpan.textContent = quizQuestion.length
 
-startButton.addEventListener("click",() => {
-    console.log("quiz start!")
-    currentQuestionIndex = 0;
-    score=0;
-    scoreSpan.textContent = 0;
-    startScreen.classList.remove('active')
-    startScreen.classList.add('active')
-    showQuestion();
-});
+    let currentQuestionIndex = 0;
+    let score = 0;
+    let answerDisable=false;
+
+    totalQuestionSpan.textContent = quizQuestion.length
+    maxScoreSpan.textContent = quizQuestion.length
+
+    startButton.addEventListener("click",() => {
+        console.log("quiz start!")
+        currentQuestionIndex = 0;
+        score=0;
+        scoreSpan.textContent = 0;
+        startScreen.classList.remove('active')
+        quizScreen.classList.add('active')
+        showQuestion();
+    });
+}
 function showQuestion(){
     answersDisable=false;
     const currentQuestion = quizQuestion[currentQuestionIndex];
@@ -88,6 +92,63 @@ function showQuestion(){
         button.textContent = answers.text;
         button.classList.add("answer-btn");
         button.dataset.correct = answers.correct;
+       button.addEventListener("click",selectAnswer);
         answerContainer.appendChild(button);
     })
+}
+function selectAnswer(event){
+    if(answerDisable) return;
+    answerDisable = true;
+    const selelectedButton = event.target;
+    const isCorrect = selelectedButton.dataset.correct === 'true';
+    Array.from(answerContainer.children).forEach((button) => {
+        if(button.dataset.correct === 'true'){
+            button.classList.add("correct");
+
+        }
+        else if(button === selelectedButton){
+            button.classList.add("incorrect");
+        }
+
+    });
+    if(isCorrect){
+        score++;
+        scoreSpan.textContent = score;
+    }
+    setTimeout(() => {
+        currentQuestionIndex ++;
+        if(currentQuestionIndex < quizQuestion.length ){
+            showQuestion();
+        }
+        else{
+            showResult();
+        }
+    },1000);
+}
+function showResult(){
+    quizScreen.classList.remove('active');
+    resultScreen.classList.add('active');
+    finalScoreSpan.classList.add('active');
+    const percentage = (score / quizQuestion.length)*100;
+    if(percentage === 100){
+        resultMessage.textContent = "Tuyệt vời"
+    }
+    else if(percentage >= 80){
+        resultMessage.textContent = "Giỏi quá"
+    }
+    else if(percentage >= 60){
+        resultMessage.textContent = "Khá đấy!"
+    }
+    else if(percentage >= 40){
+        resultMessage.textContent = "Tạm được!"
+    }
+    else {
+        resultMessage.textContent = "Cần học lại!"
+    }
+}
+
+function restartQuiz(){
+    console.log("quiz re-start")
+    resultScreen.classList.remove('active')
+    startQuiz()
 }
